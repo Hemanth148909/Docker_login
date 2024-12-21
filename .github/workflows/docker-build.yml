@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # List files to verify the structure
+      # List files to verify structure
       - name: List files in the repository
         run: ls -R
 
@@ -33,6 +33,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: ./Docs  # Make sure Docs folder is in the root of your repository
+          context: ./Docs  # Docs folder is in the root of the repository
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/your-app:latest  # Replace with your image name
