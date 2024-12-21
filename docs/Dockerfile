@@ -1,14 +1,11 @@
-# Use a basic Python image
-FROM python:3.9-slim
+# Use an official Java runtime as a parent image
+FROM openjdk:11-jre-slim
 
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /app
 
-# Copy your application files (replace with your actual file names)
+# Copy the current directory contents into the container at /app
 COPY . /app
 
-# Install any necessary Python dependencies (if you have a requirements.txt)
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Command to run your application (replace with your app's entry point)
-CMD ["python", "app.py"]
+# Specify the command to run your app
+CMD ["java", "-jar", "your-app.jar"]
