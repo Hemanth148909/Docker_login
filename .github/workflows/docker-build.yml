@@ -24,7 +24,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t my-image-name .
+        docker build -f /path/to/your/Dockerfile -t my-image .
 
     - name: Push Docker image to DockerHub
       run: |
